@@ -54,3 +54,16 @@
 	font-size: 12px;
 	font-weight: 300;
 }
+
+.movie .expand-button {
+	background: none !important;
+	border: none;
+	padding: 0 !important;
+	color: #069;
+	text-decoration: underline;
+	cursor: pointer;
+}
+
+.movie .expand-button:focus {
+	outline: none;
+}

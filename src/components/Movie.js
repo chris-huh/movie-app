@@ -1,8 +1,13 @@
-import React from 'react';
+import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 import './Movie.css';
 
 function Movie({ title, summary, poster, rating, year, genres }) {
+	const [expanded, toggle] = useState(false);
+
+	const paragraph =
+		summary.length < 180 ? summary : expanded ? summary : summary.slice(0, 180) + '...';
+
 	return (
 		<div className='movie'>
 			<img src={poster} alt={title} title={title} />
@@ -17,7 +22,16 @@ function Movie({ title, summary, poster, rating, year, genres }) {
 					))}
 				</ul>
 				<h5 className='movie-rating'>{rating} / 10</h5>
-				<p className='movie-summary'>{summary.slice(0, 180)}...</p>
+				<p className='movie-summary'>
+					{paragraph}
+					{summary.length >= 180 ? (
+						<button className='expand-button' onClick={() => toggle(!expanded)}>
+							{expanded ? 'less' : 'more'}
+						</button>
+					) : (
+						''
+					)}
+				</p>
 			</div>
 		</div>
 	);
