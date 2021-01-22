@@ -17,7 +17,7 @@ function Movie({ title, summary, poster, rating, year, genres }) {
 					))}
 				</ul>
 				<h5 className='movie-rating'>{rating} / 10</h5>
-				<p className='movie-summary'>{summary}</p>
+				<p className='movie-summary'>{summary.slice(0, 180)}...</p>
 			</div>
 		</div>
 	);
