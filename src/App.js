@@ -30,6 +30,20 @@ class App extends React.Component {
 				{isLoading ? (
 					<div className='loader'>
 						<span className='loader-text'>Loading...</span>
+						<div class='spinner'>
+							<div></div>
+							<div></div>
+							<div></div>
+							<div></div>
+							<div></div>
+							<div></div>
+							<div></div>
+							<div></div>
+							<div></div>
+							<div></div>
+							<div></div>
+							<div></div>
+						</div>
 					</div>
 				) : (
 					<div className='movies'>
